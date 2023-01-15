@@ -1311,6 +1311,8 @@ console.log(isAlive);
      message.innerText = "Would you like to stand or recieve another card? 🤔";
 
      }else if(sum === 21){
+     newCardButton.removeEventListener("click",dealNewCard3);
+     newCardButton.addEventListener("click",dealNewCard)
      message.innerText = "Black-Jack! 🥳";
      hasBlackjack = true;
      newCardButton.disabled = true;
@@ -1318,7 +1320,7 @@ console.log(isAlive);
      
      }else {
      newCardButton.removeEventListener("click",dealNewCard3);
-     
+     newCardButton.addEventListener("click",dealNewCard)
      newCardButton.disabled = true;
      startButton.disabled = false;
      message.innerText = "Sorry You are out of the round 😭";
