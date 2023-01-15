@@ -11,6 +11,7 @@
  startButton.addEventListener("click", enableNewCardButton);
  startButton.addEventListener("click",cardThreeOrigDisp )
  startButton.addEventListener("click",cardFourOrigDisp )
+ startButton.addEventListener("click",cardFiveOrigDisp )
 
 
  
@@ -22,6 +23,11 @@
 
  function cardFourOrigDisp(){
    card4.setAttribute("src", "./Assets/images/Flat Playing Cards Set/Back Covers/Sun Flower.png")
+   
+ }
+
+  function cardFiveOrigDisp(){
+   card5.setAttribute("src", "./Assets/images/Flat Playing Cards Set/Back Covers/Sun Flower.png")
    
  }
 
@@ -106,6 +112,7 @@
  let card2 = document.getElementById("card2");
  let card3 = document.getElementById("card3");
  let card4 = document.getElementById("card4");
+ let card5 = document.getElementById("card5")
  let sum = 0;
 
  function startGame(){
@@ -561,6 +568,7 @@
     if(sum <= 20){
      message.innerText = "Would you like to stand or recieve another card? 🤔";
      }else if(sum === 21){
+     newCardButton.disabled = true;
      message.innerText = "Black-Jack! 🥳";
      hasBlackjack = true;
      }else {
@@ -800,16 +808,20 @@ console.log(isAlive);
 
     if(sum <= 20){
      newCardButton.removeEventListener("click",dealNewCard);
-     newCardButton.addEventListener("click",dealNewCard2)
+     newCardButton.addEventListener("click",dealNewCard2);
      message.innerText = "Would you like to stand or recieve another card? 🤔";
 
      }else if(sum === 21){
+     newCardButton.removeEventListener("click",dealNewCard2);
+     newCardButton.addEventListener("click",dealNewCard)
      message.innerText = "Black-Jack! 🥳";
      hasBlackjack = true;
      newCardButton.disabled = true;
      startButton.disabled = false;
      
      }else {
+     newCardButton.removeEventListener("click",dealNewCard2);
+     newCardButton.addEventListener("click",dealNewCard)
      newCardButton.disabled = true;
      startButton.disabled = false;
      message.innerText = "Sorry You are out of the round 😭";
@@ -1044,6 +1056,8 @@ console.log(isAlive);
     displaySum.innerHTML = "Sum:"+ " "  + sum;
 
     if(sum <= 20){
+     newCardButton.removeEventListener("click",dealNewCard2);
+     newCardButton.addEventListener("click",dealNewCard3)
      message.innerText = "Would you like to stand or recieve another card? 🤔";
 
      }else if(sum === 21){
@@ -1057,6 +1071,254 @@ console.log(isAlive);
      }else {
      newCardButton.removeEventListener("click",dealNewCard2);
      newCardButton.addEventListener("click",dealNewCard)
+     newCardButton.disabled = true;
+     startButton.disabled = false;
+     message.innerText = "Sorry You are out of the round 😭";
+     isAlive = false;
+     }
+console.log(sum)
+console.log(isAlive);
+
+ }
+
+
+
+
+ function dealNewCard3(){
+   console.log("dealing new card")
+   
+   let fithCard
+
+    switch(Math.floor(Math.random() * 52)){
+    case 0:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/A.png");
+       fithCard = 11;
+        break;  
+    case 1:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/2.png");
+       fithCard = 2;
+        break; 
+    case 2:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/3.png");
+       fithCard =3;
+        break;
+    case 3:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/4.png");
+       fithCard =4;
+        break;
+    case 4:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/5.png");
+       fithCard =5;
+        break;
+    case 5:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/6.png");
+       fithCard =6;
+        break;
+    case 6:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/7.png");
+       fithCard =7;
+        break;
+    case 7:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/8.png");
+       fithCard =8;
+        break;
+    case 8:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/9.png");
+       fithCard =9;
+        break;
+    case 9:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/10.png");
+       fithCard =10;
+        break;
+    case 10:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/J.png");
+       fithCard =10;
+        break;
+    case 11:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/Q.png");
+       fithCard =10;
+        break;
+    case 12:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Hearts/K.png");
+       fithCard =10;
+        break;
+    case 13:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/A.png");
+       fithCard =11;
+        break;
+    case 14:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/2.png");
+       fithCard =2;
+        break;
+     case 15:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/3.png");
+       fithCard =3;
+        break;
+    case 16:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/4.png");
+       fithCard =4;
+        break;
+    case 17:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/5.png");
+       fithCard =5;
+        break;
+    case 18:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/6.png");
+       fithCard =6;
+        break;
+     case 19:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/7.png");
+       fithCard =7;
+        break;
+    case 20:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/8.png");
+       fithCard =8;
+        break;
+    case 21:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/9.png");
+       fithCard =9;
+        break;
+    case 22:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/10.png");
+       fithCard =10;
+        break;
+    case 23:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/J.png");
+       fithCard =10;
+        break;
+    case 24:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/Q.png");
+       fithCard =10;
+        break;
+    case 25:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Spades/K.png");
+       fithCard =10;
+        break;
+    case 26:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/A.png");
+       fithCard =11;
+        break;
+    case 27:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/2.png");
+       fithCard =2;
+        break;
+    case 28:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/3.png");
+       fithCard =3;
+        break; 
+    case 29:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/4.png");
+       fithCard =4;
+        break; 
+    case 30:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/5.png");
+       fithCard =5;
+        break; 
+    case 31:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/6.png");
+       fithCard =6;
+        break; 
+    case 32:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/7.png");
+       fithCard =7;
+        break; 
+    case 33:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/8.png");
+       fithCard =8;
+        break; 
+    case 34:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/9.png");
+       fithCard =9;
+        break; 
+    case 35:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/10.png");
+       fithCard =10;
+        break; 
+     case 36:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/J.png");
+       fithCard =10;
+        break; 
+    case 37:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/Q.png");
+       fithCard =10;
+        break; 
+    case 38:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Clubs/K.png");
+       fithCard =10;
+        break; 
+    case 39:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/A.png");
+       fithCard =11;
+        break; 
+    case 40:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/2.png");
+       fithCard =2;
+        break; 
+    case 41:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/3.png");
+       fithCard =3;
+        break; 
+    case 42:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/4.png");
+       fithCard =4;
+        break; 
+    case 43:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/5.png");
+       fithCard =5;
+        break; 
+    case 44:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/6.png");
+       fithCard =6;
+        break; 
+    case 45:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/7.png");
+       fithCard =7;
+        break; 
+    case 46:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/8.png");
+       fithCard =8;
+        break; 
+    case 47:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/9.png");
+       fithCard =9;
+        break; 
+    case 48:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/10.png");
+       fithCard =10;
+        break; 
+    case 49:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/J.png");
+       fithCard =10;
+        break; 
+    case 50:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/Q.png");
+       fithCard =10;
+        break; 
+    case 51:
+       card5.setAttribute("src","/Assets/images/Flat Playing Cards Set/Diamonds/K.png");
+       fithCard =10;
+        
+
+        
+           
+        
+        
+    }
+    sum +=  fithCard;
+    displaySum.innerHTML = "Sum:"+ " "  + sum;
+
+    if(sum <= 20){
+     message.innerText = "Would you like to stand or recieve another card? 🤔";
+
+     }else if(sum === 21){
+     message.innerText = "Black-Jack! 🥳";
+     hasBlackjack = true;
+     newCardButton.disabled = true;
+     startButton.disabled = false;
+     
+     }else {
+     newCardButton.removeEventListener("click",dealNewCard3);
+     
      newCardButton.disabled = true;
      startButton.disabled = false;
      message.innerText = "Sorry You are out of the round 😭";
