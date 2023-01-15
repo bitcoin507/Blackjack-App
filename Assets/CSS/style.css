@@ -81,26 +81,12 @@ h1{
         display: flex;
     }
 
-    #card1{
+    img{
         height: 125px;
         width: 75px;
         margin-right: 2px;
 
-    }
-         #card2 {
-             height: 125px;
-             width: 75px;
-             margin-left: 2px;
-          
-    
-         }
-                  #card3 {
-                      height: 125px;
-                      width: 75px;
-                      margin-left: 2px;
-        
-        
-                  }
+   
          
 
    
